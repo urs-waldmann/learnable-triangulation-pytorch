@@ -39,7 +39,8 @@ def get_square_bbox(bbox):
     """
 
     left, upper, right, lower = bbox
-    width, height = right - left, lower - upper
+    #width, height = right - left, lower - upper
+    width, height = abs(right - left), abs(lower - upper)
 
     if width > height:
         y_center = (upper + lower) // 2
@@ -55,7 +56,8 @@ def get_square_bbox(bbox):
 
 def scale_bbox(bbox, scale):
     left, upper, right, lower = bbox
-    width, height = right - left, lower - upper
+    #width, height = right - left, lower - upper
+    width, height = abs(right - left), abs(lower - upper)
 
     x_center, y_center = (right + left) // 2, (lower + upper) // 2
     new_width, new_height = int(scale * width), int(scale * height)

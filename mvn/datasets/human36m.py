@@ -127,7 +127,8 @@ class Human36MMultiViewDataset(Dataset):
 
             # load bounding box
             bbox = shot['bbox_by_camera_tlbr'][camera_idx][[1,0,3,2]] # TLBR to LTRB
-            bbox_height = bbox[2] - bbox[0]
+            #bbox_height = bbox[2] - bbox[0]
+            bbox_height = abs(bbox[2] - bbox[0])
             if bbox_height == 0:
                 # convention: if the bbox is empty, then this view is missing
                 continue

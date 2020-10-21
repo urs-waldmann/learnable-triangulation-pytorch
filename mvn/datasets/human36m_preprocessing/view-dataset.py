@@ -41,8 +41,8 @@ print(len(dataset))
 prev_action = None
 patience = 0
 
-sample_idx = 0 # number of sample to start from
-step = 10 # in frames
+#sample_idx = 0 # number of sample to start from
+#step = 10 # in frames
 
 while True:
     sample = dataset[sample_idx]

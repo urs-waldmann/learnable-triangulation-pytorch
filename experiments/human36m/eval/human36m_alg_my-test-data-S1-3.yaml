@@ -9,11 +9,11 @@ opt:
   criterion: "MSESmooth"
   mse_smooth_threshold: 400
 
-  n_objects_per_epoch: 5
-  n_epochs: 1
+  n_objects_per_epoch: 50
+  n_epochs: 38
 
-  batch_size: 1
-  val_batch_size: 2
+  batch_size: 8
+  val_batch_size: 100
 
   lr: 0.00001
 
@@ -23,7 +23,7 @@ model:
   name: "alg"
 
   init_weights: true
-  checkpoint: "/home/urs/Documents/code/learnable-triangulation-pytorch/logs/my-test-data-S1-3/method 2/human36m_alg_AlgebraicTriangulationNet@17.11.2020-15:25:03/checkpoints/0000/weights.pth"
+  checkpoint: "/home/urs/Documents/code/learnable-triangulation-pytorch/logs/my-test-data-S1-3/public annual report/human36m_alg_AlgebraicTriangulationNet@18.11.2020-15:52:30/checkpoints/0037/weights.pth"
 
   use_confidences: true
   heatmap_multiplier: 100.0

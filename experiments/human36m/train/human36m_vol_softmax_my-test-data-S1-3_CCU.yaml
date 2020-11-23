@@ -1,6 +1,6 @@
 title: "human36m_vol_softmax"
 kind: "human36m"
-vis_freq: 1000
+vis_freq: 100
 vis_n_elements: 10
 
 image_shape: [384, 384]
@@ -14,8 +14,8 @@ opt:
   n_objects_per_epoch: 100
   n_epochs: 75
 
-  batch_size: 4
-  val_batch_size: 8
+  batch_size: 6
+  val_batch_size: 12
 
   lr: 0.0001
   process_features_lr: 0.001

@@ -1,4 +1,4 @@
-title: "human36m_alg"
+title: "on_train_human36m_alg"
 kind: "human36m"
 vis_freq: 100
 vis_n_elements: 10

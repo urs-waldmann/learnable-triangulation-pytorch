@@ -1,6 +1,6 @@
 title: "human36m_alg"
 kind: "human36m"
-vis_freq: 94
+vis_freq: 100
 vis_n_elements: 10
 
 image_shape: [384, 384]
@@ -12,7 +12,7 @@ opt:
   n_objects_per_epoch: 50
   n_epochs: 38
 
-  batch_size: 8
+  batch_size: 100
   val_batch_size: 100
 
   lr: 0.00001
@@ -54,7 +54,7 @@ dataset:
     randomize_n_views: true
     min_n_views: 2
     max_n_views: 2
-    num_workers: 8
+    num_workers: 100
 
   val:
     h36m_root: "/home/urs/Documents/data/ltohp-my-test-data-S1-3-2-cams/human36m/processed/"

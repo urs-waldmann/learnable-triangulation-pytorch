@@ -54,7 +54,7 @@ dataset:
     randomize_n_views: true
     min_n_views: 2
     max_n_views: 2
-    num_workers: 100
+    num_workers: 10
 
   val:
     h36m_root: "/home/urs/Documents/data/ltohp-my-test-data-S1-3-2-cams/human36m/processed/"
@@ -68,6 +68,6 @@ dataset:
     randomize_n_views: true
     min_n_views: 2
     max_n_views: 2
-    num_workers: 100
+    num_workers: 10
 
     retain_every_n_frames_in_test: 1

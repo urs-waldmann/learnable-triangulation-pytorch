@@ -23,7 +23,7 @@ model:
   name: "alg"
 
   init_weights: true
-  checkpoint: "./data/pretrained/human36m/human36m_alg_21-10-2020/checkpoints/0074/weights.pth"
+  checkpoint: "./logs/all_views/human36m_alg_AlgebraicTriangulationNet@19.11.2020-15:22:42/checkpoints/0073/weights.pth"
 
   use_confidences: true
   heatmap_multiplier: 100.0

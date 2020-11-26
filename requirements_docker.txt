@@ -20,3 +20,4 @@ tensorboardX==1.8
 #torch==1.0.1
 #torchvision==0.2.2
 #h5py==2.10.0
+tensorflow==2.2.0

@@ -1,4 +1,4 @@
-title: "human36m_vol_softmax"
+title: "on_train_human36m_vol_softmax"
 kind: "human36m"
 vis_freq: 97
 vis_n_elements: 10

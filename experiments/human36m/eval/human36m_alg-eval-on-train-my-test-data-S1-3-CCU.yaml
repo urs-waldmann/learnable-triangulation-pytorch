@@ -1,6 +1,6 @@
 title: "on_train_human36m_alg"
 kind: "human36m"
-vis_freq: 20
+vis_freq: 15
 vis_n_elements: 10
 
 image_shape: [384, 384]
@@ -12,8 +12,8 @@ opt:
   n_objects_per_epoch: 100
   n_epochs: 75
 
-  batch_size: 260
-  val_batch_size: 260
+  batch_size: 166
+  val_batch_size: 166
 
   lr: 0.00001
 

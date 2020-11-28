@@ -1,6 +1,6 @@
-title: "human36m_alg"
+title: "on_train_human36m_alg"
 kind: "human36m"
-vis_freq: 1000
+vis_freq: 100
 vis_n_elements: 10
 
 image_shape: [384, 384]
@@ -12,7 +12,7 @@ opt:
   n_objects_per_epoch: 50
   n_epochs: 38
 
-  batch_size: 8
+  batch_size: 100
   val_batch_size: 100
 
   lr: 0.00001
@@ -23,7 +23,7 @@ model:
   name: "alg"
 
   init_weights: true
-  checkpoint: "/home/urs/Documents/code/learnable-triangulation-pytorch/logs/my-test-data-S1-3/public annual report/human36m_alg_AlgebraicTriangulationNet@18.11.2020-15:52:30/checkpoints/0037/weights.pth"
+  checkpoint: "/home/urs/Documents/code/learnable-triangulation-pytorch/logs/my-test-data-S1-3/all cams/human36m_alg_AlgebraicTriangulationNet@27.11.2020-09:31:50/checkpoints/0036/weights.pth"
 
   use_confidences: true
   heatmap_multiplier: 100.0
@@ -54,7 +54,7 @@ dataset:
     randomize_n_views: false
     min_n_views: null
     max_n_views: null
-    num_workers: 8
+    num_workers: 10
 
   val:
     h36m_root: "/home/urs/Documents/data/ltohp-my-test-data-S1-3/human36m/processed/"
@@ -68,6 +68,6 @@ dataset:
     randomize_n_views: false
     min_n_views: null
     max_n_views: null
-    num_workers: 8
+    num_workers: 10
 
     retain_every_n_frames_in_test: 1

@@ -1,6 +1,6 @@
 title: "human36m_vol_softmax"
 kind: "human36m"
-vis_freq: 50
+vis_freq: 91
 vis_n_elements: 10
 
 image_shape: [384, 384]
@@ -12,7 +12,7 @@ opt:
   volumetric_ce_loss_weight: 0.01
 
   n_objects_per_epoch: 50
-  n_epochs: 12
+  n_epochs: 38
 
   batch_size: 4
   val_batch_size: 8
@@ -58,7 +58,7 @@ dataset:
   train:
     h36m_root: "/home/urs/Documents/data/ltohp-my-test-data-S1-3/human36m/processed/"
     labels_path: "/home/urs/Documents/data/ltohp-my-test-data-S1-3/human36m/extra/human36m-multiview-labels-GTbboxes.npy"
-    pred_results_path: "/home/urs/Documents/code/learnable-triangulation-pytorch/logs/my-test-data-S1-3/public annual report/eval_on_train_human36m_alg_AlgebraicTriangulationNet@19.11.2020-08:59:50/checkpoints/0000/results.pkl"
+    pred_results_path: "/home/urs/Documents/code/learnable-triangulation-pytorch/logs/my-test-data-S1-3/all cams/eval_on_train_human36m_alg_AlgebraicTriangulationNet@28.11.2020-09:01:21/checkpoints/0000/results.pkl"
 
     with_damaged_actions: true
     undistort_images: true
@@ -69,12 +69,12 @@ dataset:
     randomize_n_views: false
     min_n_views: null
     max_n_views: null
-    num_workers: 5
+    num_workers: 4
 
   val:
     h36m_root: "/home/urs/Documents/data/ltohp-my-test-data-S1-3/human36m/processed/"
     labels_path: "/home/urs/Documents/data/ltohp-my-test-data-S1-3/human36m/extra/human36m-multiview-labels-GTbboxes.npy"
-    pred_results_path: "/home/urs/Documents/code/learnable-triangulation-pytorch/logs/my-test-data-S1-3/public annual report/eval_on_val_human36m_alg_AlgebraicTriangulationNet@19.11.2020-10:02:20/checkpoints/0000/results.pkl"
+    pred_results_path: "/home/urs/Documents/code/learnable-triangulation-pytorch/logs/my-test-data-S1-3/all cams/eval_on_val_human36m_alg_AlgebraicTriangulationNet@29.11.2020-12:29:25/checkpoints/0000/results.pkl"
 
     with_damaged_actions: true
     undistort_images: true
@@ -85,6 +85,6 @@ dataset:
     randomize_n_views: false
     min_n_views: null
     max_n_views: null
-    num_workers: 10
+    num_workers: 8
 
     retain_every_n_frames_in_test: 1

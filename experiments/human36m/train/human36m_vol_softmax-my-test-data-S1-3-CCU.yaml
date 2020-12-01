@@ -58,7 +58,7 @@ dataset:
   train:
     h36m_root: "./data/human36m/processed/"
     labels_path: "./data/human36m/extra/human36m-multiview-labels-GTbboxes.npy"
-    pred_results_path: "./data/pretrained/human36m/human36m_alg_21-10-2020/checkpoints/0074/results/train.pkl"
+    pred_results_path: "./logs/all_views/eval_on_train_human36m_alg_AlgebraicTriangulationNet@30.11.2020-14:38:35/checkpoints/0000/results.pkl"
 
     with_damaged_actions: true
     undistort_images: true
@@ -69,12 +69,12 @@ dataset:
     randomize_n_views: false
     min_n_views: null
     max_n_views: null
-    num_workers: 5
+    num_workers: 6
 
   val:
     h36m_root: "./data/human36m/processed/"
     labels_path: "./data/human36m/extra/human36m-multiview-labels-GTbboxes.npy"
-    pred_results_path: "./data/pretrained/human36m/human36m_alg_21-10-2020/checkpoints/0074/results/val.pkl"
+    pred_results_path: "./logs/all_views/eval_on_val_human36m_alg_AlgebraicTriangulationNet@01.12.2020-08:44:14/checkpoints/0000/results.pkl"
 
     with_damaged_actions: true
     undistort_images: true
@@ -85,6 +85,6 @@ dataset:
     randomize_n_views: false
     min_n_views: null
     max_n_views: null
-    num_workers: 10
+    num_workers: 8
 
     retain_every_n_frames_in_test: 1

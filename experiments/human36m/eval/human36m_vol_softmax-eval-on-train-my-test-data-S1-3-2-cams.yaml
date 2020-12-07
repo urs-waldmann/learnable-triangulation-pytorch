@@ -29,7 +29,7 @@ model:
   volume_aggregation_method: "softmax"
 
   init_weights: true
-  checkpoint: "/home/urs/Documents/code/learnable-triangulation-pytorch/logs/my-test-data-S1-3/2 cams/human36m_vol_softmax_VolumetricTriangulationNet@25.11.2020-10:26:17/checkpoints/0037/weights.pth"
+  checkpoint: "/home/urs/Documents/code/learnable-triangulation-pytorch/logs/my-test-data-S1-3/2 cams/human36m_vol_softmax_VolumetricTriangulationNet@03.12.2020-15:41:13/checkpoints/0037/weights.pth"
 
   use_gt_pelvis: false
 
@@ -58,7 +58,7 @@ dataset:
   train:
     h36m_root: "/home/urs/Documents/data/ltohp-my-test-data-S1-3-2-cams/human36m/processed/"
     labels_path: "/home/urs/Documents/data/ltohp-my-test-data-S1-3-2-cams/human36m/extra/human36m-multiview-labels-GTbboxes.npy"
-    pred_results_path: "/home/urs/Documents/code/learnable-triangulation-pytorch/logs/my-test-data-S1-3/2 cams/eval_on_train_human36m_alg_AlgebraicTriangulationNet@25.11.2020-09:46:05/checkpoints/0000/results.pkl"
+    pred_results_path: "/home/urs/Documents/code/learnable-triangulation-pytorch/logs/my-test-data-S1-3/2 cams/eval_on_train_human36m_alg_AlgebraicTriangulationNet@03.12.2020-10:28:33/checkpoints/0000/results.pkl"
 
     with_damaged_actions: true
     undistort_images: true
@@ -66,15 +66,15 @@ dataset:
     scale_bbox: 1.0
 
     shuffle: true
-    randomize_n_views: true
-    min_n_views: 2
-    max_n_views: 2
+    randomize_n_views: false
+    min_n_views: null
+    max_n_views: null
     num_workers: 10
 
   val:
     h36m_root: "/home/urs/Documents/data/ltohp-my-test-data-S1-3-2-cams/human36m/processed/"
     labels_path: "/home/urs/Documents/data/ltohp-my-test-data-S1-3-2-cams/human36m/extra/human36m-multiview-labels-GTbboxes.npy"
-    pred_results_path: "/home/urs/Documents/code/learnable-triangulation-pytorch/logs/my-test-data-S1-3/2 cams/eval_on_val_human36m_alg_AlgebraicTriangulationNet@25.11.2020-10:05:12/checkpoints/0000/results.pkl"
+    pred_results_path: "/home/urs/Documents/code/learnable-triangulation-pytorch/logs/my-test-data-S1-3/2 cams/eval_on_val_human36m_alg_AlgebraicTriangulationNet@03.12.2020-13:21:17/checkpoints/0000/results.pkl"
 
     with_damaged_actions: true
     undistort_images: true
@@ -82,9 +82,9 @@ dataset:
     scale_bbox: 1.0
 
     shuffle: false
-    randomize_n_views: true
-    min_n_views: 2
-    max_n_views: 2
+    randomize_n_views: false
+    min_n_views: null
+    max_n_views: null
     num_workers: 10
 
     retain_every_n_frames_in_test: 1

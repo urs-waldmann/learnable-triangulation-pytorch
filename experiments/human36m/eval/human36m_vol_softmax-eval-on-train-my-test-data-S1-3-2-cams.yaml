@@ -1,6 +1,6 @@
 title: "on_train_human36m_vol_softmax"
 kind: "human36m"
-vis_freq: 97
+vis_freq: 80
 vis_n_elements: 10
 
 image_shape: [384, 384]
@@ -11,11 +11,11 @@ opt:
   use_volumetric_ce_loss: true
   volumetric_ce_loss_weight: 0.01
 
-  n_objects_per_epoch: 50
+  n_objects_per_epoch: 125
   n_epochs: 38
 
-  batch_size: 31
-  val_batch_size: 31
+  batch_size: 75
+  val_batch_size: 75
 
   lr: 0.0001
   process_features_lr: 0.001
@@ -29,7 +29,7 @@ model:
   volume_aggregation_method: "softmax"
 
   init_weights: true
-  checkpoint: "/home/urs/Documents/code/learnable-triangulation-pytorch/logs/my-test-data-S1-3/2 cams/human36m_vol_softmax_VolumetricTriangulationNet@03.12.2020-15:41:13/checkpoints/0037/weights.pth"
+  checkpoint: "/home/urs/Documents/code/learnable-triangulation-pytorch/logs/my-test-data-S1-3/2 cams/human36m_vol_softmax_VolumetricTriangulationNet@09.12.2020-10:05:18/checkpoints/0037/weights.pth"
 
   use_gt_pelvis: false
 
@@ -58,7 +58,7 @@ dataset:
   train:
     h36m_root: "/home/urs/Documents/data/ltohp-my-test-data-S1-3-2-cams/human36m/processed/"
     labels_path: "/home/urs/Documents/data/ltohp-my-test-data-S1-3-2-cams/human36m/extra/human36m-multiview-labels-GTbboxes.npy"
-    pred_results_path: "/home/urs/Documents/code/learnable-triangulation-pytorch/logs/my-test-data-S1-3/2 cams/eval_on_train_human36m_alg_AlgebraicTriangulationNet@03.12.2020-10:28:33/checkpoints/0000/results.pkl"
+    pred_results_path: "/home/urs/Documents/code/learnable-triangulation-pytorch/logs/my-test-data-S1-3/2 cams/eval_on_train_human36m_alg_AlgebraicTriangulationNet@08.12.2020-18:10:22/checkpoints/0000/results.pkl"
 
     with_damaged_actions: true
     undistort_images: true
@@ -67,14 +67,14 @@ dataset:
 
     shuffle: true
     randomize_n_views: false
-    min_n_views: null
-    max_n_views: null
+    min_n_views: 2
+    max_n_views: 2
     num_workers: 10
 
   val:
     h36m_root: "/home/urs/Documents/data/ltohp-my-test-data-S1-3-2-cams/human36m/processed/"
     labels_path: "/home/urs/Documents/data/ltohp-my-test-data-S1-3-2-cams/human36m/extra/human36m-multiview-labels-GTbboxes.npy"
-    pred_results_path: "/home/urs/Documents/code/learnable-triangulation-pytorch/logs/my-test-data-S1-3/2 cams/eval_on_val_human36m_alg_AlgebraicTriangulationNet@03.12.2020-13:21:17/checkpoints/0000/results.pkl"
+    pred_results_path: "/home/urs/Documents/code/learnable-triangulation-pytorch/logs/my-test-data-S1-3/2 cams/eval_on_val_human36m_alg_AlgebraicTriangulationNet@08.12.2020-20:28:35/checkpoints/0000/results.pkl"
 
     with_damaged_actions: true
     undistort_images: true
@@ -83,8 +83,8 @@ dataset:
 
     shuffle: false
     randomize_n_views: false
-    min_n_views: null
-    max_n_views: null
+    min_n_views: 2
+    max_n_views: 2
     num_workers: 10
 
     retain_every_n_frames_in_test: 1

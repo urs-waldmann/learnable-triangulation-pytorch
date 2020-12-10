@@ -9,11 +9,11 @@ opt:
   criterion: "MSESmooth"
   mse_smooth_threshold: 400
 
-  n_objects_per_epoch: 50
+  n_objects_per_epoch: 125
   n_epochs: 38
 
-  batch_size: 5
-  val_batch_size: 10
+  batch_size: 12
+  val_batch_size: 24
 
   lr: 0.00001
 
@@ -52,9 +52,9 @@ dataset:
 
     shuffle: true
     randomize_n_views: false
-    min_n_views: null
-    max_n_views: null
-    num_workers: 5
+    min_n_views: 2
+    max_n_views: 2
+    num_workers: 10
 
   val:
     h36m_root: "/home/urs/Documents/data/ltohp-my-test-data-S1-3-2-cams/human36m/processed/"
@@ -66,8 +66,8 @@ dataset:
 
     shuffle: false
     randomize_n_views: false
-    min_n_views: null
-    max_n_views: null
+    min_n_views: 2
+    max_n_views: 2
     num_workers: 10
 
     retain_every_n_frames_in_test: 1

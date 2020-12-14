@@ -1,0 +1,90 @@
+title: "human36m_vol_softmax"
+kind: "human36m"
+vis_freq: 8137
+vis_n_elements: 10
+
+image_shape: [384, 384]
+
+opt:
+  criterion: "MAE"
+
+  use_volumetric_ce_loss: true
+  volumetric_ce_loss_weight: 0.01
+
+  n_objects_per_epoch: 12125
+  n_epochs: 75
+
+  batch_size: 14
+  val_batch_size: 28
+
+  lr: 0.0001
+  process_features_lr: 0.001
+  volume_net_lr: 0.001
+
+  scale_keypoints_3d: 0.1
+
+model:
+  name: "vol"
+  kind: "mpii"
+  volume_aggregation_method: "softmax"
+
+  init_weights: false
+  checkpoint: ""
+
+  use_gt_pelvis: false
+
+  cuboid_side: 2500.0
+
+  volume_size: 64
+  volume_multiplier: 1.0
+  volume_softmax: true
+
+  heatmap_softmax: true
+  heatmap_multiplier: 100.0
+
+  backbone:
+    name: "resnet152"
+    style: "simple"
+
+    init_weights: true
+    checkpoint: "./data/2 cams/pretrained/human36m/pose_resnet_4.5_pixels_human36m.pth"
+
+    num_joints: 17
+    num_layers: 152
+
+dataset:
+  kind: "human36m"
+
+  train:
+    h36m_root: "./data/2 cams/human36m/processed/"
+    labels_path: "./data/2 cams/human36m/extra/human36m-multiview-labels-GTbboxes.npy"
+    pred_results_path: "./logs/2_views/eval_on_train_human36m_alg_AlgebraicTriangulationNet@14.12.2020-09:16:52/checkpoints/0000/results.pkl"
+
+    with_damaged_actions: true
+    undistort_images: true
+
+    scale_bbox: 1.0
+
+    shuffle: true
+    randomize_n_views: false
+    min_n_views: 2
+    max_n_views: 2
+    num_workers: 8
+
+  val:
+    h36m_root: "./data/2 cams/human36m/processed/"
+    labels_path: "./data/2 cams/human36m/extra/human36m-multiview-labels-GTbboxes.npy"
+    pred_results_path: "./logs/2_views/eval_on_val_human36m_alg_AlgebraicTriangulationNet@14.12.2020-09:52:28/checkpoints/0000/results.pkl"
+
+    with_damaged_actions: true
+    undistort_images: true
+
+    scale_bbox: 1.0
+
+    shuffle: false
+    randomize_n_views: false
+    min_n_views: 2
+    max_n_views: 2
+    num_workers: 8
+
+    retain_every_n_frames_in_test: 1

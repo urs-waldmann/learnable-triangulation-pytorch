@@ -72,7 +72,7 @@ class Human36MMultiViewDataset(Dataset):
         n_cameras = len(self.labels['camera_names'])
         assert all(camera_idx in range(n_cameras) for camera_idx in self.ignore_cameras)
 
-        train_subjects = ['S2', 'S3']
+        train_subjects = ['S1']
         test_subjects = ['S1']
 
         train_subjects = list(self.labels['subject_names'].index(x) for x in train_subjects)
@@ -98,8 +98,8 @@ class Human36MMultiViewDataset(Dataset):
 
         self.labels['table'] = self.labels['table'][np.concatenate(indices)]
 
-        self.num_keypoints = 16 if kind == "mpii" else 17
-        assert self.labels['table']['keypoints'].shape[1] == 17, "Use a newer 'labels' file"
+        self.num_keypoints = 16 if kind == "mpii" else 7
+        assert self.labels['table']['keypoints'].shape[1] == 7, "Use a newer 'labels' file"
 
         self.keypoints_3d_pred = None
         if pred_results_path is not None:

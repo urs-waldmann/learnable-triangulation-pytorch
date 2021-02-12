@@ -98,8 +98,8 @@ class Human36MMultiViewDataset(Dataset):
 
         self.labels['table'] = self.labels['table'][np.concatenate(indices)]
 
-        self.num_keypoints = 16 if kind == "mpii" else 7
-        assert self.labels['table']['keypoints'].shape[1] == 7, "Use a newer 'labels' file"
+        self.num_keypoints = 16 if kind == "mpii" else 7 # 7 not 17 because "human36m" = pigeon data set
+        assert self.labels['table']['keypoints'].shape[1] == 7, "Use a newer 'labels' file" # 7 not 17 because "human36m" = pigeon data set
 
         self.keypoints_3d_pred = None
         if pred_results_path is not None:

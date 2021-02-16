@@ -1,4 +1,4 @@
-title: "on_val_human36m_alg"
+title: "on-val-pigeon-test-data_alg"
 kind: "human36m"
 vis_freq: 12
 vis_n_elements: 10
@@ -9,7 +9,7 @@ opt:
   criterion: "MSESmooth"
   mse_smooth_threshold: 400
 
-  n_objects_per_epoch: 125
+  n_objects_per_epoch: 109
   n_epochs: 38
 
   batch_size: 250
@@ -23,7 +23,7 @@ model:
   name: "alg"
 
   init_weights: true
-  checkpoint: "/home/urs/Documents/code/learnable-triangulation-pytorch/logs/my-test-data-S1-3/2 cams/human36m_alg_AlgebraicTriangulationNet@08.12.2020-10:50:39/checkpoints/0037/weights.pth"
+  checkpoint: "/home/urs/Documents/code/learnable-triangulation-pytorch/logs/pigeon-test-data/pigeon-test-data_alg_AlgebraicTriangulationNet@16.02.2021-11:45:03/checkpoints/0037/weights.pth"
 
   use_confidences: true
   heatmap_multiplier: 100.0
@@ -33,18 +33,18 @@ model:
     name: "resnet152"
     style: "simple"
 
-    init_weights: true
-    checkpoint: "/home/urs/Documents/data/ltohp-my-test-data-S1-3-2-cams/pretrained/human36m/pose_resnet_4.5_pixels_human36m.pth"
+    init_weights: false
+    checkpoint: ""
 
-    num_joints: 17
+    num_joints: 7
     num_layers: 152
 
 dataset:
   kind: "human36m"
 
   train:
-    h36m_root: "/home/urs/Documents/data/ltohp-my-test-data-S1-3-2-cams/human36m/processed/"
-    labels_path: "/home/urs/Documents/data/ltohp-my-test-data-S1-3-2-cams/human36m/extra/human36m-multiview-labels-GTbboxes.npy"
+    h36m_root: "/home/urs/Documents/data/ltohp-pigeon-test-data/human36m/processed/"
+    labels_path: "/home/urs/Documents/data/ltohp-pigeon-test-data/human36m/extra/pigeons-multiview-labels-GTbboxes.npy"
     with_damaged_actions: true
     undistort_images: true
 
@@ -57,8 +57,8 @@ dataset:
     num_workers: 10
 
   val:
-    h36m_root: "/home/urs/Documents/data/ltohp-my-test-data-S1-3-2-cams/human36m/processed/"
-    labels_path: "/home/urs/Documents/data/ltohp-my-test-data-S1-3-2-cams/human36m/extra/human36m-multiview-labels-GTbboxes.npy"
+    h36m_root: "/home/urs/Documents/data/ltohp-pigeon-test-data/human36m/processed/"
+    labels_path: "/home/urs/Documents/data/ltohp-pigeon-test-data/human36m/extra/pigeons-multiview-labels-GTbboxes.npy"
     with_damaged_actions: true
     undistort_images: true
 

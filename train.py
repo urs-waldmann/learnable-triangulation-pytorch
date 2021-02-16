@@ -300,7 +300,7 @@ def one_epoch(model, criterion, opt, config, dataloader, device, epoch, n_iters_
                                     kind=vis_kind,
                                     cuboids_batch=cuboids_pred,
                                     batch_index=batch_i, size=5,
-                                    max_n_rows=1, max_n_cols=16
+                                    max_n_rows=1, max_n_cols=7
                                 )
                                 writer.add_image(f"{name}/volumes/{batch_i}", volumes_vis.transpose(2, 0, 1), global_step=n_iters_total)
 

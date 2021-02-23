@@ -72,8 +72,8 @@ class Human36MMultiViewDataset(Dataset):
         n_cameras = len(self.labels['camera_names'])
         assert all(camera_idx in range(n_cameras) for camera_idx in self.ignore_cameras)
 
-        train_subjects = ['S1']
-        test_subjects = ['S1']
+        train_subjects = ['S1', 'S3', 'S4']
+        test_subjects = ['S2']
 
         train_subjects = list(self.labels['subject_names'].index(x) for x in train_subjects)
         test_subjects  = list(self.labels['subject_names'].index(x) for x in test_subjects)

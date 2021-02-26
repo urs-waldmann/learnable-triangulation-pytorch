@@ -1,6 +1,6 @@
 title: "pigeon-data_alg"
 kind: "human36m"
-vis_freq: 152
+vis_freq: 101
 vis_n_elements: 10
 
 image_shape: [384, 384]

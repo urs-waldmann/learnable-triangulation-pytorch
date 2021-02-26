@@ -1,6 +1,6 @@
 title: "pigeon-data-set_vol_softmax"
 kind: "human36m"
-vis_freq: 98
+vis_freq: 113
 vis_n_elements: 10
 
 image_shape: [384, 384]
@@ -11,7 +11,7 @@ opt:
   use_volumetric_ce_loss: true
   volumetric_ce_loss_weight: 0.01
 
-  n_objects_per_epoch: 109
+  n_objects_per_epoch: 100
   n_epochs: 38
 
   batch_size: 8
@@ -33,7 +33,7 @@ model:
 
   use_gt_pelvis: false
 
-  cuboid_side: 800.0
+  cuboid_side: 1000.0
 
   volume_size: 64
   volume_multiplier: 1.0
@@ -56,9 +56,9 @@ dataset:
   kind: "human36m"
 
   train:
-    h36m_root: "/home/urs/Documents/data/ltohp-pigeon-test-data/human36m/processed/"
-    labels_path: "/home/urs/Documents/data/ltohp-pigeon-test-data/human36m/extra/pigeons-multiview-labels-GTbboxes.npy"
-    pred_results_path: "/home/urs/Documents/code/learnable-triangulation-pytorch/logs/pigeon-test-data/eval_on-train-pigeon-test-data_alg_AlgebraicTriangulationNet@16.02.2021-13:32:48/checkpoints/0000/results.pkl"
+    h36m_root: "/home/urs/Documents/data/ltohp-pigeon-data/human36m/processed/"
+    labels_path: "/home/urs/Documents/data/ltohp-pigeon-data/human36m/extra/pigeons-multiview-labels-GTbboxes.npy"
+    pred_results_path: "/home/urs/Documents/code/learnable-triangulation-pytorch/logs/pigeon-data/eval_on-train-pigeon-data_alg_AlgebraicTriangulationNet@26.02.2021-09:09:23/checkpoints/0000/results.pkl"
 
     with_damaged_actions: true
     undistort_images: true
@@ -72,9 +72,9 @@ dataset:
     num_workers: 8
 
   val:
-    h36m_root: "/home/urs/Documents/data/ltohp-pigeon-test-data/human36m/processed/"
-    labels_path: "/home/urs/Documents/data/ltohp-pigeon-test-data/human36m/extra/pigeons-multiview-labels-GTbboxes.npy"
-    pred_results_path: "/home/urs/Documents/code/learnable-triangulation-pytorch/logs/pigeon-test-data/eval_on-val-pigeon-test-data_alg_AlgebraicTriangulationNet@16.02.2021-13:38:10/checkpoints/0000/results.pkl"
+    h36m_root: "/home/urs/Documents/data/ltohp-pigeon-data/human36m/processed/"
+    labels_path: "/home/urs/Documents/data/ltohp-pigeon-data/human36m/extra/pigeons-multiview-labels-GTbboxes.npy"
+    pred_results_path: "/home/urs/Documents/code/learnable-triangulation-pytorch/logs/pigeon-data/eval_on-val-pigeon-data_alg_AlgebraicTriangulationNet@26.02.2021-09:33:19/checkpoints/0000/results.pkl"
 
     with_damaged_actions: true
     undistort_images: true

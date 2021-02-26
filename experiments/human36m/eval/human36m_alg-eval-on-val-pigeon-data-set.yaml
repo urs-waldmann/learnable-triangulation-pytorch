@@ -1,6 +1,6 @@
-title: "on-val-pigeon-test-data_alg"
+title: "on-val-pigeon-data_alg"
 kind: "human36m"
-vis_freq: 12
+vis_freq: 4
 vis_n_elements: 10
 
 image_shape: [384, 384]
@@ -9,7 +9,7 @@ opt:
   criterion: "MSESmooth"
   mse_smooth_threshold: 400
 
-  n_objects_per_epoch: 109
+  n_objects_per_epoch: 100
   n_epochs: 38
 
   batch_size: 250
@@ -23,7 +23,7 @@ model:
   name: "alg"
 
   init_weights: true
-  checkpoint: "/home/urs/Documents/code/learnable-triangulation-pytorch/logs/pigeon-test-data/pigeon-test-data_alg_AlgebraicTriangulationNet@16.02.2021-11:45:03/checkpoints/0037/weights.pth"
+  checkpoint: "/home/urs/Documents/code/learnable-triangulation-pytorch/logs/pigeon-data/pigeon-data_alg_AlgebraicTriangulationNet@25.02.2021-15:56:11/checkpoints/0037/weights.pth"
 
   use_confidences: true
   heatmap_multiplier: 100.0
@@ -43,8 +43,8 @@ dataset:
   kind: "human36m"
 
   train:
-    h36m_root: "/home/urs/Documents/data/ltohp-pigeon-test-data/human36m/processed/"
-    labels_path: "/home/urs/Documents/data/ltohp-pigeon-test-data/human36m/extra/pigeons-multiview-labels-GTbboxes.npy"
+    h36m_root: "/home/urs/Documents/data/ltohp-pigeon-data/human36m/processed/"
+    labels_path: "/home/urs/Documents/data/ltohp-pigeon-data/human36m/extra/pigeons-multiview-labels-GTbboxes.npy"
     with_damaged_actions: true
     undistort_images: true
 
@@ -57,8 +57,8 @@ dataset:
     num_workers: 10
 
   val:
-    h36m_root: "/home/urs/Documents/data/ltohp-pigeon-test-data/human36m/processed/"
-    labels_path: "/home/urs/Documents/data/ltohp-pigeon-test-data/human36m/extra/pigeons-multiview-labels-GTbboxes.npy"
+    h36m_root: "/home/urs/Documents/data/ltohp-pigeon-data/human36m/processed/"
+    labels_path: "/home/urs/Documents/data/ltohp-pigeon-data/human36m/extra/pigeons-multiview-labels-GTbboxes.npy"
     with_damaged_actions: true
     undistort_images: true
 

@@ -1,6 +1,6 @@
-title: "human36m_alg"
+title: "pds_alg"
 kind: "human36m"
-vis_freq: 4556
+vis_freq: 6243
 vis_n_elements: 10
 
 image_shape: [384, 384]
@@ -9,11 +9,11 @@ opt:
   criterion: "MSESmooth"
   mse_smooth_threshold: 400
 
-  n_objects_per_epoch: 12125
+  n_objects_per_epoch: 10007
   n_epochs: 75
 
-  batch_size: 25
-  val_batch_size: 50
+  batch_size: 30
+  val_batch_size: 60
 
   lr: 0.00001
 
@@ -33,18 +33,18 @@ model:
     name: "resnet152"
     style: "simple"
 
-    init_weights: true
-    checkpoint: "./data/2 cams/pretrained/human36m/pose_resnet_4.5_pixels_human36m.pth"
+    init_weights: false
+    checkpoint: ""
 
-    num_joints: 17
+    num_joints: 7
     num_layers: 152
 
 dataset:
   kind: "human36m"
 
   train:
-    h36m_root: "./data/2 cams/human36m/processed/"
-    labels_path: "./data/2 cams/human36m/extra/human36m-multiview-labels-GTbboxes.npy"
+    h36m_root: "/abyss/home/dataset-pds-for-ltohp/human36m/processed/"
+    labels_path: "/abyss/home/dataset-pds-for-ltohp/human36m/extra/pigeons-multiview-labels-GTbboxes.npy"
     with_damaged_actions: true
     undistort_images: true
 
@@ -57,8 +57,8 @@ dataset:
     num_workers: 8
 
   val:
-    h36m_root: "./data/2 cams/human36m/processed/"
-    labels_path: "./data/2 cams/human36m/extra/human36m-multiview-labels-GTbboxes.npy"
+    h36m_root: "/abyss/home/dataset-pds-for-ltohp/human36m/processed/"
+    labels_path: "/abyss/home/dataset-pds-for-ltohp/human36m/extra/pigeons-multiview-labels-GTbboxes.npy"
     with_damaged_actions: true
     undistort_images: true
 

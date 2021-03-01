@@ -1,6 +1,6 @@
-title: "on_val_human36m_alg"
+title: "on-val-pds_alg"
 kind: "human36m"
-vis_freq: 7
+vis_freq: 2
 vis_n_elements: 10
 
 image_shape: [384, 384]
@@ -9,7 +9,7 @@ opt:
   criterion: "MSESmooth"
   mse_smooth_threshold: 400
 
-  n_objects_per_epoch: 12125
+  n_objects_per_epoch: 10007
   n_epochs: 75
 
   batch_size: 300
@@ -23,7 +23,7 @@ model:
   name: "alg"
 
   init_weights: true
-  checkpoint: "./logs/2_views/human36m_alg_AlgebraicTriangulationNet@08.12.2020-14:31:30/checkpoints/0074/weights.pth"
+  checkpoint: "/abyss/home/logs-pds-for-ltohp/init_bb_weights_false/pds_alg_AlgebraicTriangulationNet@26.02.2021-14:47:07/checkpoints/0074/weights.pth"
 
   use_confidences: true
   heatmap_multiplier: 100.0
@@ -33,18 +33,18 @@ model:
     name: "resnet152"
     style: "simple"
 
-    init_weights: true
-    checkpoint: "./data/2 cams/pretrained/human36m/pose_resnet_4.5_pixels_human36m.pth"
+    init_weights: false
+    checkpoint: ""
 
-    num_joints: 17
+    num_joints: 7
     num_layers: 152
 
 dataset:
   kind: "human36m"
 
   train:
-    h36m_root: "./data/2 cams/human36m/processed/"
-    labels_path: "./data/2 cams/human36m/extra/human36m-multiview-labels-GTbboxes.npy"
+    h36m_root: "/abyss/home/dataset-pds-for-ltohp/human36m/processed/"
+    labels_path: "/abyss/home/dataset-pds-for-ltohp/human36m/extra/pigeons-multiview-labels-GTbboxes.npy"
     with_damaged_actions: true
     undistort_images: true
 
@@ -57,8 +57,8 @@ dataset:
     num_workers: 8
 
   val:
-    h36m_root: "./data/2 cams/human36m/processed/"
-    labels_path: "./data/2 cams/human36m/extra/human36m-multiview-labels-GTbboxes.npy"
+    h36m_root: "/abyss/home/dataset-pds-for-ltohp/human36m/processed/"
+    labels_path: "/abyss/home/dataset-pds-for-ltohp/human36m/extra/pigeons-multiview-labels-GTbboxes.npy"
     with_damaged_actions: true
     undistort_images: true
 

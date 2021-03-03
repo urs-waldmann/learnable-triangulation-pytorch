@@ -1,6 +1,6 @@
 title: "pds_alg"
 kind: "human36m"
-vis_freq: 6243
+vis_freq: 3749
 vis_n_elements: 10
 
 image_shape: [384, 384]
@@ -12,8 +12,8 @@ opt:
   n_objects_per_epoch: 10007
   n_epochs: 75
 
-  batch_size: 30
-  val_batch_size: 60
+  batch_size: 25
+  val_batch_size: 50
 
   lr: 0.00001
 
@@ -33,8 +33,8 @@ model:
     name: "resnet152"
     style: "simple"
 
-    init_weights: false
-    checkpoint: ""
+    init_weights: true
+    checkpoint: "/abyss/home/dataset-pds-for-ltohp/pretrained/human36m/pose_resnet_4.5_pixels_human36m.pth"
 
     num_joints: 7
     num_layers: 152

@@ -46,7 +46,7 @@ model:
     name: "resnet152"
     style: "simple"
 
-    init_weights: true
+    init_weights: false
     checkpoint: ""
 
     num_joints: 7

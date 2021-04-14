@@ -1,6 +1,6 @@
 title: "on-train-CV4An-pds_vol_softmax"
 kind: "human36m"
-vis_freq: 14
+vis_freq: 17
 vis_n_elements: 10
 
 image_shape: [384, 384]
@@ -14,8 +14,8 @@ opt:
   n_objects_per_epoch: 12584
   n_epochs: 75
 
-  batch_size: 161
-  val_batch_size: 161
+  batch_size: 163
+  val_batch_size: 163
 
   lr: 0.0001
   process_features_lr: 0.001

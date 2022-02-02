@@ -72,7 +72,7 @@ class Human36MMultiViewDataset(Dataset):
         n_cameras = len(self.labels['camera_names'])
         assert all(camera_idx in range(n_cameras) for camera_idx in self.ignore_cameras)
 
-        train_subjects = ['S1', 'S3', 'S4']
+        train_subjects = ['S1']
         test_subjects = ['S2']
 
         train_subjects = list(self.labels['subject_names'].index(x) for x in train_subjects)
@@ -98,8 +98,8 @@ class Human36MMultiViewDataset(Dataset):
 
         self.labels['table'] = self.labels['table'][np.concatenate(indices)]
 
-        self.num_keypoints = 16 if kind == "mpii" else 7 # 7 not 17 because "human36m" = pigeon data set
-        assert self.labels['table']['keypoints'].shape[1] == 7, "Use a newer 'labels' file" # 7 not 17 because "human36m" = pigeon data set
+        self.num_keypoints = 16 if kind == "mpii" else 19 # 19 not 17 because "human36m" = synthetic pigeon data set
+        assert self.labels['table']['keypoints'].shape[1] == 19, "Use a newer 'labels' file" # 19 not 17 because "human36m" = synthetic pigeon data set
 
         self.keypoints_3d_pred = None
         if pred_results_path is not None:
@@ -139,7 +139,7 @@ class Human36MMultiViewDataset(Dataset):
             # load image
             image_path = os.path.join(
                 self.h36m_root, subject, action, 'imageSequence' + '-undistorted' * self.undistort_images,
-                camera_name, 'img_%06d.jpg' % (frame_idx+1))
+                camera_name, 'img_%06d.png' % (frame_idx+1))
             assert os.path.isfile(image_path), '%s doesn\'t exist' % image_path
             image = cv2.imread(image_path)
 

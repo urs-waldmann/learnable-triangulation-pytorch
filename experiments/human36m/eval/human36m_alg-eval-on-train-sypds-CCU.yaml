@@ -1,6 +1,6 @@
-title: "sypds_alg"
+title: "on-train-sypds_alg"
 kind: "human36m"
-vis_freq: 1417
+vis_freq: 1
 vis_n_elements: 10
 
 image_shape: [384, 384]
@@ -12,8 +12,8 @@ opt:
   n_objects_per_epoch: 1015
   n_epochs: 225
 
-  batch_size: 8
-  val_batch_size: 16
+  batch_size: 100
+  val_batch_size: 100
 
   lr: 0.00001
 
@@ -23,7 +23,7 @@ model:
   name: "alg"
 
   init_weights: true
-  checkpoint: "/abyss/home/logs-ltohp-sypds/8_cams/sypds_alg_AlgebraicTriangulationNet@08.02.2022-21:16:32/checkpoints/0044/weights.pth"
+  checkpoint: "/abyss/home/logs-ltohp-sypds/8_cams/sypds_alg_AlgebraicTriangulationNet@09.02.2022-09:08:24/checkpoints/0224/weights.pth"
 
   use_confidences: true
   heatmap_multiplier: 100.0
@@ -57,7 +57,7 @@ dataset:
     num_workers: 8
 
   val:
-    h36m_root: "/abyss/home/dataset-ltohp-sypds/8_cams/human36m/processed"
+    h36m_root: "/abyss/home/dataset-ltohp-sypds/8_cams/human36m/processed/"
     labels_path: "/abyss/home/dataset-ltohp-sypds/8_cams/human36m/extra/synthetic-pigeons-multiview-labels-GTbboxes.npy"
     with_damaged_actions: true
     undistort_images: true

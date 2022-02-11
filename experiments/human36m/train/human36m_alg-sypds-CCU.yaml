@@ -22,8 +22,8 @@ opt:
 model:
   name: "alg"
 
-  init_weights: true
-  checkpoint: "/abyss/home/logs-ltohp-sypds/8_cams/sypds_alg_AlgebraicTriangulationNet@08.02.2022-21:16:32/checkpoints/0044/weights.pth"
+  init_weights: false
+  checkpoint: ""
 
   use_confidences: true
   heatmap_multiplier: 100.0

@@ -1,6 +1,6 @@
 title: "sypds_alg"
 kind: "human36m"
-vis_freq: 10867
+vis_freq: 1417
 vis_n_elements: 10
 
 image_shape: [384, 384]
@@ -10,7 +10,7 @@ opt:
   mse_smooth_threshold: 400
 
   n_objects_per_epoch: 1015
-  n_epochs: 345
+  n_epochs: 225
 
   batch_size: 8
   val_batch_size: 16
@@ -22,8 +22,8 @@ opt:
 model:
   name: "alg"
 
-  init_weights: false
-  checkpoint: ""
+  init_weights: true
+  checkpoint: "/abyss/home/logs-ltohp-sypds/8_cams/sypds_alg_AlgebraicTriangulationNet@08.02.2022-21:16:32/checkpoints/0044/weights.pth"
 
   use_confidences: true
   heatmap_multiplier: 100.0

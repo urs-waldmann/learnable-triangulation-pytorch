@@ -1,6 +1,6 @@
 title: "human36m_alg"
 kind: "human36m"
-vis_freq: 14062
+vis_freq: 3247
 vis_n_elements: 10
 
 image_shape: [384, 384]
@@ -9,7 +9,7 @@ opt:
   criterion: "MSESmooth"
   mse_smooth_threshold: 400
 
-  n_objects_per_epoch: 15000
+  n_objects_per_epoch: 3464
   n_epochs: 30
 
   batch_size: 8

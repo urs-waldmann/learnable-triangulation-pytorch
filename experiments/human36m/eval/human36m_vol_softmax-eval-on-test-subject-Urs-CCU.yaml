@@ -1,6 +1,6 @@
-title: "on_train_human36m_vol_softmax"
+title: "on_test_human36m_like_vol_softmax"
 kind: "human36m"
-vis_freq: 20
+vis_freq: 9
 vis_n_elements: 10
 
 image_shape: [384, 384]
@@ -11,11 +11,11 @@ opt:
   use_volumetric_ce_loss: true
   volumetric_ce_loss_weight: 0.01
 
-  n_objects_per_epoch: 12125
+  n_objects_per_epoch: 3464
   n_epochs: 75
 
-  batch_size: 120
-  val_batch_size: 120
+  batch_size: 31
+  val_batch_size: 31
 
   lr: 0.0001
   process_features_lr: 0.001
@@ -29,9 +29,9 @@ model:
   volume_aggregation_method: "softmax"
 
   init_weights: true
-  checkpoint: "./logs/2_views/human36m_vol_softmax_VolumetricTriangulationNet@14.12.2020-14:54:16/checkpoints/0074/weights.pth"
+  checkpoint: "/abyss/home/logs-ltohp-subject-Urs/human36m_like_vol_softmax_VolumetricTriangulationNet@14.02.2022-09:28:42/checkpoints/0074/weights.pth"
 
-  use_gt_pelvis: false
+  use_gt_pelvis: true
 
   cuboid_side: 2500.0
 
@@ -47,7 +47,7 @@ model:
     style: "simple"
 
     init_weights: true
-    checkpoint: "./data/2 cams/pretrained/human36m/pose_resnet_4.5_pixels_human36m.pth"
+    checkpoint: "/abyss/home/dataset-ltohp-subject-Urs/pretrained/human36m/pose_resnet_4.5_pixels_human36m.pth"
 
     num_joints: 17
     num_layers: 152
@@ -56,9 +56,9 @@ dataset:
   kind: "human36m"
 
   train:
-    h36m_root: "./data/2 cams/human36m/processed/"
-    labels_path: "./data/2 cams/human36m/extra/human36m-multiview-labels-GTbboxes.npy"
-    pred_results_path: "./logs/2_views/eval_on_train_human36m_alg_AlgebraicTriangulationNet@14.12.2020-09:16:52/checkpoints/0000/results.pkl"
+    h36m_root: "/abyss/home/dataset-ltohp-subject-Urs/human36m/processed/"
+    labels_path: "/abyss/home/dataset-ltohp-subject-Urs/human36m/extra/human36m-like-multiview-labels-GTbboxes.npy"
+    pred_results_path:
 
     with_damaged_actions: true
     undistort_images: true
@@ -67,14 +67,14 @@ dataset:
 
     shuffle: true
     randomize_n_views: false
-    min_n_views: 2
-    max_n_views: 2
+    min_n_views: null
+    max_n_views: null
     num_workers: 8
 
   val:
-    h36m_root: "./data/2 cams/human36m/processed/"
-    labels_path: "./data/2 cams/human36m/extra/human36m-multiview-labels-GTbboxes.npy"
-    pred_results_path: "./logs/2_views/eval_on_val_human36m_alg_AlgebraicTriangulationNet@14.12.2020-09:52:28/checkpoints/0000/results.pkl"
+    h36m_root: "/abyss/home/dataset-ltohp-subject-Urs/human36m/processed/"
+    labels_path: "/abyss/home/dataset-ltohp-subject-Urs/human36m/extra/human36m-like-multiview-labels-GTbboxes.npy"
+    pred_results_path:
 
     with_damaged_actions: true
     undistort_images: true
@@ -83,8 +83,8 @@ dataset:
 
     shuffle: false
     randomize_n_views: false
-    min_n_views: 2
-    max_n_views: 2
+    min_n_views: null
+    max_n_views: null
     num_workers: 8
 
     retain_every_n_frames_in_test: 1

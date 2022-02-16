@@ -47,7 +47,7 @@ model:
     style: "simple"
 
     init_weights: true
-    checkpoint: "/abyss/home/dataset-ltohp-sypds/8_cams/pretrained/human36m/pose_resnet_4.5_pixels_human36m.pth"
+    checkpoint: "/abyss/home/dataset-ltohp-sypds/8_cams_3_rows/pretrained/human36m/pose_resnet_4.5_pixels_human36m.pth"
 
     num_joints: 19
     num_layers: 152
@@ -56,8 +56,8 @@ dataset:
   kind: "human36m"
 
   train:
-    h36m_root: "/abyss/home/dataset-ltohp-sypds/8_cams/human36m/processed/"
-    labels_path: "/abyss/home/dataset-ltohp-sypds/8_cams/human36m/extra/synthetic-pigeons-multiview-labels-GTbboxes.npy"
+    h36m_root: "/abyss/home/dataset-ltohp-sypds/8_cams_3_rows/human36m/processed/"
+    labels_path: "/abyss/home/dataset-ltohp-sypds/8_cams_3_rows/human36m/extra/synthetic-pigeons-multiview-labels-GTbboxes.npy"
     pred_results_path:
 
     with_damaged_actions: true
@@ -72,8 +72,8 @@ dataset:
     num_workers: 8
 
   val:
-    h36m_root: "/abyss/home/dataset-ltohp-sypds/8_cams/human36m/processed/"
-    labels_path: "/abyss/home/dataset-ltohp-sypds/8_cams/human36m/extra/synthetic-pigeons-multiview-labels-GTbboxes.npy"
+    h36m_root: "/abyss/home/dataset-ltohp-sypds/8_cams_3_rows/human36m/processed/"
+    labels_path: "/abyss/home/dataset-ltohp-sypds/8_cams_3_rows/human36m/extra/synthetic-pigeons-multiview-labels-GTbboxes.npy"
     pred_results_path:
 
     with_damaged_actions: true

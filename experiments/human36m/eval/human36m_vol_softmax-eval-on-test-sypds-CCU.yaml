@@ -29,11 +29,11 @@ model:
   volume_aggregation_method: "softmax"
 
   init_weights: true
-  checkpoint: "/abyss/home/logs-ltohp-sypds/8_cams/sypds_vol_softmax_VolumetricTriangulationNet@11.02.2022-17:08:18/checkpoints/0749/weights.pth"
+  checkpoint: "/abyss/home/logs-ltohp-sypds/sypds_vol_softmax_VolumetricTriangulationNet@14.02.2022-09:43:37/checkpoints/0074/weights.pth"
 
   use_gt_pelvis: true
 
-  cuboid_side: 1000.0
+  cuboid_side: 500.0
 
   volume_size: 64
   volume_multiplier: 1.0

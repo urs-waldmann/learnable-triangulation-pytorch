@@ -1,6 +1,6 @@
 title: "sypds_vol_softmax"
 kind: "human36m"
-vis_freq: 38062
+vis_freq: 20199
 vis_n_elements: 10
 
 image_shape: [384, 384]
@@ -11,8 +11,8 @@ opt:
   use_volumetric_ce_loss: true
   volumetric_ce_loss_weight: 0.01
 
-  n_objects_per_epoch: 1015
-  n_epochs: 750
+  n_objects_per_epoch: 1014
+  n_epochs: 1000
 
   batch_size: 5
   val_batch_size: 10
@@ -31,9 +31,9 @@ model:
   init_weights: false
   checkpoint: ""
 
-  use_gt_pelvis: false
+  use_gt_pelvis: true
 
-  cuboid_side: 500.0
+  cuboid_side: 1000.0
 
   volume_size: 64
   volume_multiplier: 1.0
@@ -58,7 +58,7 @@ dataset:
   train:
     h36m_root: "/abyss/home/dataset-ltohp-sypds/8_cams/human36m/processed/"
     labels_path: "/abyss/home/dataset-ltohp-sypds/8_cams/human36m/extra/synthetic-pigeons-multiview-labels-GTbboxes.npy"
-    pred_results_path: "/abyss/home/logs-ltohp-sypds/8_cams/eval_on-train-sypds_alg_AlgebraicTriangulationNet@10.02.2022-08:41:12/checkpoints/0000/results.pkl"
+    pred_results_path:
 
     with_damaged_actions: true
     undistort_images: true
@@ -74,7 +74,7 @@ dataset:
   val:
     h36m_root: "/abyss/home/dataset-ltohp-sypds/8_cams/human36m/processed/"
     labels_path: "/abyss/home/dataset-ltohp-sypds/8_cams/human36m/extra/synthetic-pigeons-multiview-labels-GTbboxes.npy"
-    pred_results_path: "/abyss/home/logs-ltohp-sypds/8_cams/sypds_alg_AlgebraicTriangulationNet@09.02.2022-09:08:24/checkpoints/0224/results.pkl"
+    pred_results_path:
 
     with_damaged_actions: true
     undistort_images: true

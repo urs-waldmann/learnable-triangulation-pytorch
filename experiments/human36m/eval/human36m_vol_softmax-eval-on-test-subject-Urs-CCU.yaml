@@ -1,4 +1,4 @@
-title: "on_test_human36m_like_vol_softmax"
+title: "on-test-human36m-like_vol_softmax"
 kind: "human36m"
 vis_freq: 9
 vis_n_elements: 10
@@ -12,7 +12,7 @@ opt:
   volumetric_ce_loss_weight: 0.01
 
   n_objects_per_epoch: 3464
-  n_epochs: 75
+  n_epochs: 1000
 
   batch_size: 31
   val_batch_size: 31
@@ -29,7 +29,7 @@ model:
   volume_aggregation_method: "softmax"
 
   init_weights: true
-  checkpoint: "/abyss/home/logs-ltohp-subject-Urs/human36m_like_vol_softmax_VolumetricTriangulationNet@14.02.2022-09:28:42/checkpoints/0074/weights.pth"
+  checkpoint: "/abyss/home/logs-ecccv-2022/subject-Urs/human36m_like_vol_softmax_VolumetricTriangulationNet@17.02.2022-09:57:02/checkpoints/0218/weights.pth"
 
   use_gt_pelvis: true
 

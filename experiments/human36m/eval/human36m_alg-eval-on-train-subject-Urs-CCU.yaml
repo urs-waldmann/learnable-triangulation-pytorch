@@ -1,6 +1,6 @@
-title: "on_train_human36m_alg"
+title: "on-train-human36m-like_alg"
 kind: "human36m"
-vis_freq: 100
+vis_freq: 10
 vis_n_elements: 10
 
 image_shape: [384, 384]
@@ -9,8 +9,8 @@ opt:
   criterion: "MSESmooth"
   mse_smooth_threshold: 400
 
-  n_objects_per_epoch: 50
-  n_epochs: 38
+  n_objects_per_epoch: 3464
+  n_epochs: 500
 
   batch_size: 100
   val_batch_size: 100
@@ -23,7 +23,7 @@ model:
   name: "alg"
 
   init_weights: true
-  checkpoint: "/home/urs/Documents/code/learnable-triangulation-pytorch/logs/my-test-data-S1-3/all cams/human36m_alg_AlgebraicTriangulationNet@27.11.2020-09:31:50/checkpoints/0036/weights.pth"
+  checkpoint: "/abyss/home/logs-eccv-2022/subject-Urs/human36m-like_alg_AlgebraicTriangulationNet@22.02.2022-14:01:34/checkpoints/0171/weights.pth"
 
   use_confidences: true
   heatmap_multiplier: 100.0
@@ -34,7 +34,7 @@ model:
     style: "simple"
 
     init_weights: true
-    checkpoint: "/home/urs/Documents/data/ltohp-my-test-data-S1-3/pretrained/human36m/pose_resnet_4.5_pixels_human36m.pth"
+    checkpoint: "/abyss/home/dataset-ltohp-subject-Urs/pretrained/human36m/pose_resnet_4.5_pixels_human36m.pth"
 
     num_joints: 17
     num_layers: 152
@@ -43,8 +43,8 @@ dataset:
   kind: "human36m"
 
   train:
-    h36m_root: "/home/urs/Documents/data/ltohp-my-test-data-S1-3/human36m/processed/"
-    labels_path: "/home/urs/Documents/data/ltohp-my-test-data-S1-3/human36m/extra/human36m-multiview-labels-GTbboxes.npy"
+    h36m_root: "/abyss/home/dataset-ltohp-subject-Urs/human36m/processed/"
+    labels_path: "/abyss/home/dataset-ltohp-subject-Urs/human36m/extra/human36m-like-multiview-labels-GTbboxes.npy"
     with_damaged_actions: true
     undistort_images: true
 
@@ -54,11 +54,11 @@ dataset:
     randomize_n_views: false
     min_n_views: null
     max_n_views: null
-    num_workers: 10
+    num_workers: 8
 
   val:
-    h36m_root: "/home/urs/Documents/data/ltohp-my-test-data-S1-3/human36m/processed/"
-    labels_path: "/home/urs/Documents/data/ltohp-my-test-data-S1-3/human36m/extra/human36m-multiview-labels-GTbboxes.npy"
+    h36m_root: "/abyss/home/dataset-ltohp-subject-Urs/human36m/processed/"
+    labels_path: "/abyss/home/dataset-ltohp-subject-Urs/human36m/extra/human36m-like-multiview-labels-GTbboxes.npy"
     with_damaged_actions: true
     undistort_images: true
 
@@ -68,6 +68,6 @@ dataset:
     randomize_n_views: false
     min_n_views: null
     max_n_views: null
-    num_workers: 10
+    num_workers: 8
 
     retain_every_n_frames_in_test: 1

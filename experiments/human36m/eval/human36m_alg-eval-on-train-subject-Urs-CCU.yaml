@@ -1,4 +1,4 @@
-title: "on_train_human36m_like_alg"
+title: "on-train-human36m-like_alg"
 kind: "human36m"
 vis_freq: 10
 vis_n_elements: 10
@@ -10,7 +10,7 @@ opt:
   mse_smooth_threshold: 400
 
   n_objects_per_epoch: 3464
-  n_epochs: 30
+  n_epochs: 500
 
   batch_size: 100
   val_batch_size: 100
@@ -23,7 +23,7 @@ model:
   name: "alg"
 
   init_weights: true
-  checkpoint: "/abyss/home/logs-ltohp-subject-Urs/human36m_alg_AlgebraicTriangulationNet@11.02.2022-17:20:21/checkpoints/0029/weights.pth"
+  checkpoint: "/abyss/home/logs-eccv-2022/subject-Urs/human36m-like_alg_AlgebraicTriangulationNet@22.02.2022-14:01:34/checkpoints/0171/weights.pth"
 
   use_confidences: true
   heatmap_multiplier: 100.0

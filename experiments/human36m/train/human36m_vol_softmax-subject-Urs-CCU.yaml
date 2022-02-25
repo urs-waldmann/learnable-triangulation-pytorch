@@ -1,6 +1,6 @@
-title: "human36m_like_vol_softmax"
+title: "human36m-like_vol_softmax"
 kind: "human36m"
-vis_freq: 69199
+vis_freq: 34599
 vis_n_elements: 10
 
 image_shape: [384, 384]
@@ -12,7 +12,7 @@ opt:
   volumetric_ce_loss_weight: 0.01
 
   n_objects_per_epoch: 3464
-  n_epochs: 1000
+  n_epochs: 500
 
   batch_size: 5
   val_batch_size: 10
@@ -31,7 +31,7 @@ model:
   init_weights: false
   checkpoint: ""
 
-  use_gt_pelvis: true
+  use_gt_pelvis: false
 
   cuboid_side: 2500.0
 
@@ -58,7 +58,7 @@ dataset:
   train:
     h36m_root: "/abyss/home/dataset-ltohp-subject-Urs/human36m/processed/"
     labels_path: "/abyss/home/dataset-ltohp-subject-Urs/human36m/extra/human36m-like-multiview-labels-GTbboxes.npy"
-    pred_results_path:
+    pred_results_path: "/abyss/home/logs-eccv-2022/subject-Urs/eval_on-train-human36m-like_alg_AlgebraicTriangulationNet@24.02.2022-08:09:26/checkpoints/0000/results.pkl"
 
     with_damaged_actions: true
     undistort_images: true
@@ -74,7 +74,7 @@ dataset:
   val:
     h36m_root: "/abyss/home/dataset-ltohp-subject-Urs/human36m/processed/"
     labels_path: "/abyss/home/dataset-ltohp-subject-Urs/human36m/extra/human36m-like-multiview-labels-GTbboxes.npy"
-    pred_results_path:
+    pred_results_path: "/abyss/home/logs-eccv-2022/subject-Urs/human36m-like_alg_AlgebraicTriangulationNet@22.02.2022-14:01:34/checkpoints/0171/results.pkl"
 
     with_damaged_actions: true
     undistort_images: true

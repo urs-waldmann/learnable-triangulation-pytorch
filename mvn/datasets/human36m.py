@@ -98,8 +98,8 @@ class Human36MMultiViewDataset(Dataset):
 
         self.labels['table'] = self.labels['table'][np.concatenate(indices)]
 
-        self.num_keypoints = 16 if kind == "mpii" else 19 # 19 not 17 because "human36m" = synthetic pigeon data set
-        assert self.labels['table']['keypoints'].shape[1] == 19, "Use a newer 'labels' file" # 19 not 17 because "human36m" = synthetic pigeon data set
+        self.num_keypoints = 16 if kind == "mpii" else 25
+        assert self.labels['table']['keypoints'].shape[1] == 25, "Use a newer 'labels' file"
 
         self.keypoints_3d_pred = None
         if pred_results_path is not None:
@@ -139,7 +139,7 @@ class Human36MMultiViewDataset(Dataset):
             # load image
             image_path = os.path.join(
                 self.h36m_root, subject, action, 'imageSequence' + '-undistorted' * self.undistort_images,
-                camera_name, 'img_%06d.png' % (frame_idx+1))
+                camera_name, 'img_%06d.jpg' % (frame_idx+1))
             assert os.path.isfile(image_path), '%s doesn\'t exist' % image_path
             image = cv2.imread(image_path)
 
@@ -252,10 +252,10 @@ class Human36MMultiViewDataset(Dataset):
             keypoints_gt = keypoints_gt[:, human36m_joints]
             keypoints_3d_predicted = keypoints_3d_predicted[:, cmu_joints]
 
-        # mean error per 16/19 joints in mm, for each pose
+        # mean error per 16/25 joints in mm, for each pose
         per_pose_error = np.sqrt(((keypoints_gt - keypoints_3d_predicted) ** 2).sum(2)).mean(1)
 
-        # relative mean error per 16/19 joints in mm, for each pose
+        # relative mean error per 16/25 joints in mm, for each pose
         if not (transfer_cmu_to_human36m or transfer_human36m_to_human36m):
             root_index = 6 if self.kind == "mpii" else 6
         else:

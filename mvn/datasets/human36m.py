@@ -98,8 +98,8 @@ class Human36MMultiViewDataset(Dataset):
 
         self.labels['table'] = self.labels['table'][np.concatenate(indices)]
 
-        self.num_keypoints = 16 if kind == "mpii" else 25
-        assert self.labels['table']['keypoints'].shape[1] == 25, "Use a newer 'labels' file"
+        self.num_keypoints = 16 if kind == "mpii" else 26
+        assert self.labels['table']['keypoints'].shape[1] == 26, "Use a newer 'labels' file"
 
         self.keypoints_3d_pred = None
         if pred_results_path is not None:
@@ -252,10 +252,10 @@ class Human36MMultiViewDataset(Dataset):
             keypoints_gt = keypoints_gt[:, human36m_joints]
             keypoints_3d_predicted = keypoints_3d_predicted[:, cmu_joints]
 
-        # mean error per 16/25 joints in mm, for each pose
+        # mean error per 16/26 joints in mm, for each pose
         per_pose_error = np.sqrt(((keypoints_gt - keypoints_3d_predicted) ** 2).sum(2)).mean(1)
 
-        # relative mean error per 16/25 joints in mm, for each pose
+        # relative mean error per 16/26 joints in mm, for each pose
         if not (transfer_cmu_to_human36m or transfer_human36m_to_human36m):
             root_index = 6 if self.kind == "mpii" else 6
         else:

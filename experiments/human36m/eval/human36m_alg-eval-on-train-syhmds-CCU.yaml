@@ -1,4 +1,4 @@
-title: "on-train-human36m-like_alg"
+title: "on-train-syhmds_alg"
 kind: "human36m"
 vis_freq: 10
 vis_n_elements: 10
@@ -9,7 +9,7 @@ opt:
   criterion: "MSESmooth"
   mse_smooth_threshold: 400
 
-  n_objects_per_epoch: 3464
+  n_objects_per_epoch: 2249
   n_epochs: 500
 
   batch_size: 100
@@ -23,7 +23,7 @@ model:
   name: "alg"
 
   init_weights: true
-  checkpoint: "/abyss/home/logs-eccv-2022/subject-Urs/human36m-like_alg_AlgebraicTriangulationNet@22.02.2022-14:01:34/checkpoints/0171/weights.pth"
+  checkpoint: "/abyss/home/logs-eccv-2022/syhmds/syhmds_alg_AlgebraicTriangulationNet@26.02.2022-21:20:49/checkpoints/0358/weights.pth"
 
   use_confidences: true
   heatmap_multiplier: 100.0
@@ -34,17 +34,17 @@ model:
     style: "simple"
 
     init_weights: true
-    checkpoint: "/abyss/home/dataset-ltohp-subject-Urs/pretrained/human36m/pose_resnet_4.5_pixels_human36m.pth"
+    checkpoint: "/abyss/home/dataset-ltohp-syhmds/8_cams/pretrained/human36m/pose_resnet_4.5_pixels_human36m.pth"
 
-    num_joints: 17
+    num_joints: 33
     num_layers: 152
 
 dataset:
   kind: "human36m"
 
   train:
-    h36m_root: "/abyss/home/dataset-ltohp-subject-Urs/human36m/processed/"
-    labels_path: "/abyss/home/dataset-ltohp-subject-Urs/human36m/extra/human36m-like-multiview-labels-GTbboxes.npy"
+    h36m_root: "/abyss/home/dataset-ltohp-syhmds/8_cams/human36m/processed/"
+    labels_path: "/abyss/home/dataset-ltohp-syhmds/8_cams/human36m/extra/synthetic-human-male-multiview-labels-GTbboxes.npy"
     with_damaged_actions: true
     undistort_images: true
 
@@ -57,8 +57,8 @@ dataset:
     num_workers: 8
 
   val:
-    h36m_root: "/abyss/home/dataset-ltohp-subject-Urs/human36m/processed/"
-    labels_path: "/abyss/home/dataset-ltohp-subject-Urs/human36m/extra/human36m-like-multiview-labels-GTbboxes.npy"
+    h36m_root: "/abyss/home/dataset-ltohp-syhmds/8_cams/human36m/processed/"
+    labels_path: "/abyss/home/dataset-ltohp-syhmds/8_cams/human36m/extra/synthetic-human-male-multiview-labels-GTbboxes.npy"
     with_damaged_actions: true
     undistort_images: true
 

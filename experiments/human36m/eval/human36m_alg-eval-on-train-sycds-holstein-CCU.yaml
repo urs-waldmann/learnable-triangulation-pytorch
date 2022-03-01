@@ -1,6 +1,6 @@
-title: "on-train-sypds_alg"
+title: "on-train-sycds-holstein_alg"
 kind: "human36m"
-vis_freq: 2
+vis_freq: 1
 vis_n_elements: 10
 
 image_shape: [384, 384]
@@ -9,7 +9,7 @@ opt:
   criterion: "MSESmooth"
   mse_smooth_threshold: 400
 
-  n_objects_per_epoch: 1010
+  n_objects_per_epoch: 630
   n_epochs: 500
 
   batch_size: 100
@@ -23,7 +23,7 @@ model:
   name: "alg"
 
   init_weights: true
-  checkpoint: "/abyss/home/logs-eccv-2022/sypds/sypds_alg_AlgebraicTriangulationNet@23.02.2022-16:36:55/checkpoints/0499/weights.pth"
+  checkpoint: "/abyss/home/logs-eccv-2022/sycds/Holstein/sycds-holstein_alg_AlgebraicTriangulationNet@27.02.2022-16:22:55/checkpoints/0030/weights.pth"
 
   use_confidences: true
   heatmap_multiplier: 100.0
@@ -34,17 +34,17 @@ model:
     style: "simple"
 
     init_weights: true
-    checkpoint: "/abyss/home/dataset-ltohp-sypds/eccv-2022-split/8_cams/pretrained/human36m/pose_resnet_4.5_pixels_human36m.pth"
+    checkpoint: "/abyss/home/dataset-ltohp-sycds/Holstein/8_cams/pretrained/human36m/pose_resnet_4.5_pixels_human36m.pth"
 
-    num_joints: 19
+    num_joints: 25
     num_layers: 152
 
 dataset:
   kind: "human36m"
 
   train:
-    h36m_root: "/abyss/home/dataset-ltohp-sypds/eccv-2022-split/8_cams/human36m/processed/"
-    labels_path: "/abyss/home/dataset-ltohp-sypds/eccv-2022-split/8_cams/human36m/extra/synthetic-pigeons-multiview-labels-GTbboxes.npy"
+    h36m_root: "/abyss/home/dataset-ltohp-sycds/Holstein/8_cams/human36m/processed/"
+    labels_path: "/abyss/home/dataset-ltohp-sycds/Holstein/8_cams/human36m/extra/synthetic-cow-holstein-multiview-labels-GTbboxes.npy"
     with_damaged_actions: true
     undistort_images: true
 
@@ -57,8 +57,8 @@ dataset:
     num_workers: 8
 
   val:
-    h36m_root: "/abyss/home/dataset-ltohp-sypds/eccv-2022-split/8_cams/human36m/processed/"
-    labels_path: "/abyss/home/dataset-ltohp-sypds/eccv-2022-split/8_cams/human36m/extra/synthetic-pigeons-multiview-labels-GTbboxes.npy"
+    h36m_root: "/abyss/home/dataset-ltohp-sycds/Holstein/8_cams/human36m/processed/"
+    labels_path: "/abyss/home/dataset-ltohp-sycds/Holstein/8_cams/human36m/extra/synthetic-cow-holstein-multiview-labels-GTbboxes.npy"
     with_damaged_actions: true
     undistort_images: true
 

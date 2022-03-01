@@ -200,7 +200,7 @@ def one_epoch(model, criterion, opt, config, dataloader, device, epoch, n_iters_
                 # 1-view case
                 if n_views == 1:
                     if config.kind == "human36m":
-                        base_joint = 6
+                        base_joint = 23
                     elif config.kind == "coco":
                         base_joint = 11
 

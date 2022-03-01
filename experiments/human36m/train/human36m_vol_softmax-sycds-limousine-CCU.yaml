@@ -33,7 +33,7 @@ model:
 
   use_gt_pelvis: true
 
-  cuboid_side: 2000.0
+  cuboid_side: 3000.0
 
   volume_size: 64
   volume_multiplier: 1.0

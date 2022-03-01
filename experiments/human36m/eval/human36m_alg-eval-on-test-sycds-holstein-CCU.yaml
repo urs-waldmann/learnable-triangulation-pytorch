@@ -23,7 +23,7 @@ model:
   name: "alg"
 
   init_weights: true
-  checkpoint: "/abyss/home/logs-eccv-2022/sycds/Holstein/sycds-holstein_alg_AlgebraicTriangulationNet@27.02.2022-16:22:55/checkpoints/0030/weights.pth"
+  checkpoint: "/abyss/home/logs-eccv-2022/sycds/Holstein/sycds-holstein_alg_AlgebraicTriangulationNet@27.02.2022-16:22:55/checkpoints/0499/weights.pth"
 
   use_confidences: true
   heatmap_multiplier: 100.0

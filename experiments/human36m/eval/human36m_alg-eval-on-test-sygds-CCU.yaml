@@ -1,4 +1,4 @@
-title: "on-test-sypds_alg"
+title: "on-test-sygds_alg"
 kind: "human36m"
 vis_freq: 1
 vis_n_elements: 10
@@ -9,8 +9,8 @@ opt:
   criterion: "MSESmooth"
   mse_smooth_threshold: 400
 
-  n_objects_per_epoch: 1015
-  n_epochs: 225
+  n_objects_per_epoch: 1330
+  n_epochs: 500
 
   batch_size: 100
   val_batch_size: 100
@@ -23,7 +23,7 @@ model:
   name: "alg"
 
   init_weights: true
-  checkpoint: "/abyss/home/logs-ltohp-sypds/8_cams/sypds_alg_AlgebraicTriangulationNet@09.02.2022-09:08:24/checkpoints/0224/weights.pth"
+  checkpoint: "/abyss/home/logs-eccv-2022/sygds/sygds_alg_AlgebraicTriangulationNet@27.02.2022-17:28:31/checkpoints/0419/weights.pth"
 
   use_confidences: true
   heatmap_multiplier: 100.0
@@ -34,17 +34,17 @@ model:
     style: "simple"
 
     init_weights: true
-    checkpoint: "/abyss/home/dataset-ltohp-sypds/8_cams/pretrained/human36m/pose_resnet_4.5_pixels_human36m.pth"
+    checkpoint: "/abyss/home/dataset-ltohp-sygds/8_cams/pretrained/human36m/pose_resnet_4.5_pixels_human36m.pth"
 
-    num_joints: 19
+    num_joints: 26
     num_layers: 152
 
 dataset:
   kind: "human36m"
 
   train:
-    h36m_root: "/abyss/home/dataset-ltohp-sypds/8_cams/human36m/processed/"
-    labels_path: "/abyss/home/dataset-ltohp-sypds/8_cams/human36m/extra/synthetic-pigeons-multiview-labels-GTbboxes.npy"
+    h36m_root: "/abyss/home/dataset-ltohp-sygds/8_cams/human36m/processed/"
+    labels_path: "/abyss/home/dataset-ltohp-sygds/8_cams/human36m/extra/synthetic-giraffe-multiview-labels-GTbboxes.npy"
     with_damaged_actions: true
     undistort_images: true
 
@@ -57,8 +57,8 @@ dataset:
     num_workers: 8
 
   val:
-    h36m_root: "/abyss/home/dataset-ltohp-sypds/8_cams/human36m/processed/"
-    labels_path: "/abyss/home/dataset-ltohp-sypds/8_cams/human36m/extra/synthetic-pigeons-multiview-labels-GTbboxes.npy"
+    h36m_root: "/abyss/home/dataset-ltohp-sygds/8_cams/human36m/processed/"
+    labels_path: "/abyss/home/dataset-ltohp-sygds/8_cams/human36m/extra/synthetic-giraffe-multiview-labels-GTbboxes.npy"
     with_damaged_actions: true
     undistort_images: true
 

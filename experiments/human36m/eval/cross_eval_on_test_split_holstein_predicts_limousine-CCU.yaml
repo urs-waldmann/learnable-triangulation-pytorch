@@ -1,4 +1,4 @@
-title: "on-test-sycds-holstein_vol_softmax"
+title: "on-test-sycds-holstein-predicts-limousine_vol_softmax"
 kind: "human36m"
 vis_freq: 6
 vis_n_elements: 10
@@ -56,8 +56,8 @@ dataset:
   kind: "human36m"
 
   train:
-    h36m_root: "/abyss/home/dataset-ltohp-sycds/Holstein/8_cams/human36m/processed/"
-    labels_path: "/abyss/home/dataset-ltohp-sycds/Holstein/8_cams/human36m/extra/synthetic-cow-holstein-multiview-labels-GTbboxes.npy"
+    h36m_root: "/abyss/home/dataset-ltohp-sycds/Limousine/8_cams/human36m/processed/"
+    labels_path: "/abyss/home/dataset-ltohp-sycds/Limousine/8_cams/human36m/extra/synthetic-cow-limousine-multiview-labels-GTbboxes.npy"
     pred_results_path: "/abyss/home/logs-eccv-2022/sycds/Holstein/eval_on-train-sycds-holstein_alg_AlgebraicTriangulationNet@01.03.2022-09:28:13/checkpoints/0000/results.pkl"
 
     with_damaged_actions: true
@@ -72,8 +72,8 @@ dataset:
     num_workers: 8
 
   val:
-    h36m_root: "/abyss/home/dataset-ltohp-sycds/Holstein/8_cams/human36m/processed/"
-    labels_path: "/abyss/home/dataset-ltohp-sycds/Holstein/8_cams/human36m/extra/synthetic-cow-holstein-multiview-labels-GTbboxes.npy"
+    h36m_root: "/abyss/home/dataset-ltohp-sycds/Limousine/8_cams/human36m/processed/"
+    labels_path: "/abyss/home/dataset-ltohp-sycds/Limousine/8_cams/human36m/extra/synthetic-cow-limousine-multiview-labels-GTbboxes.npy"
     pred_results_path: "/abyss/home/logs-eccv-2022/sycds/Holstein/eval_on-test-sycds-holstein_alg_AlgebraicTriangulationNet@28.02.2022-18:18:03/checkpoints/0000/results.pkl"
 
     with_damaged_actions: true

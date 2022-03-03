@@ -29,9 +29,9 @@ model:
   volume_aggregation_method: "softmax"
 
   init_weights: true
-  checkpoint: "/abyss/home/logs-eccv-2022/subject-Urs/human36m-like_vol_softmax_VolumetricTriangulationNet@24.02.2022-08:48:36/checkpoints/0163/weights.pth"
+  checkpoint: "/abyss/home/logs-eccv-2022/subject-Urs/human36m-like_vol_softmax_VolumetricTriangulationNet/checkpoints/0163/weights.pth"
 
-  use_gt_pelvis: true
+  use_gt_pelvis: false
 
   cuboid_side: 2500.0
 
@@ -58,7 +58,7 @@ dataset:
   train:
     h36m_root: "/abyss/home/dataset-ltohp-subject-Urs/human36m/processed/"
     labels_path: "/abyss/home/dataset-ltohp-subject-Urs/human36m/extra/human36m-like-multiview-labels-GTbboxes.npy"
-    pred_results_path:
+    pred_results_path: "/abyss/home/logs-eccv-2022/subject-Urs/eval_on-train-human36m-like_alg_AlgebraicTriangulationNet/checkpoints/0000/results.pkl"
 
     with_damaged_actions: true
     undistort_images: true
@@ -74,7 +74,7 @@ dataset:
   val:
     h36m_root: "/abyss/home/dataset-ltohp-subject-Urs/human36m/processed/"
     labels_path: "/abyss/home/dataset-ltohp-subject-Urs/human36m/extra/human36m-like-multiview-labels-GTbboxes.npy"
-    pred_results_path:
+    pred_results_path: "/abyss/home/logs-eccv-2022/subject-Urs/eval_on-test-human36m-like_alg_AlgebraicTriangulationNet/checkpoints/0000/results.pkl"
 
     with_damaged_actions: true
     undistort_images: true

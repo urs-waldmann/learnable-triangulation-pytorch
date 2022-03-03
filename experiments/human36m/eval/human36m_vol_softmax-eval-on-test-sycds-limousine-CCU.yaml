@@ -1,4 +1,4 @@
-title: "on-test-sycds-limousine_vol_softmax"
+title: "on-test-sycds-limousine-gt_vol_softmax"
 kind: "human36m"
 vis_freq: 6
 vis_n_elements: 10
@@ -29,9 +29,9 @@ model:
   volume_aggregation_method: "softmax"
 
   init_weights: true
-  checkpoint: "/abyss/home/logs-eccv-2022/sycds/Limousine/sycds-limousine_vol_softmax_VolumetricTriangulationNet@01.03.2022-13:18:58/checkpoints/0499/weights.pth"
+  checkpoint: "/abyss/home/logs-eccv-2022/sycds/Limousine/sycds-limousine_vol_softmax_VolumetricTriangulationNet@01.03.2022-13:11:21/checkpoints/0499/weights.pth"
 
-  use_gt_pelvis: false
+  use_gt_pelvis: true
 
   cuboid_side: 3000.0
 
@@ -58,7 +58,7 @@ dataset:
   train:
     h36m_root: "/abyss/home/dataset-ltohp-sycds/Limousine/8_cams/human36m/processed/"
     labels_path: "/abyss/home/dataset-ltohp-sycds/Limousine/8_cams/human36m/extra/synthetic-cow-limousine-multiview-labels-GTbboxes.npy"
-    pred_results_path: "/abyss/home/logs-eccv-2022/sycds/Limousine/eval_on-train-sycds-limousine_alg_AlgebraicTriangulationNet@01.03.2022-09:35:01/checkpoints/0000/results.pkl"
+    pred_results_path:
 
     with_damaged_actions: true
     undistort_images: true
@@ -74,7 +74,7 @@ dataset:
   val:
     h36m_root: "/abyss/home/dataset-ltohp-sycds/Limousine/8_cams/human36m/processed/"
     labels_path: "/abyss/home/dataset-ltohp-sycds/Limousine/8_cams/human36m/extra/synthetic-cow-limousine-multiview-labels-GTbboxes.npy"
-    pred_results_path: "/abyss/home/logs-eccv-2022/sycds/Limousine/eval_on-test-sycds-limousine_alg_AlgebraicTriangulationNet@28.02.2022-18:12:02/checkpoints/0000/results.pkl"
+    pred_results_path:
 
     with_damaged_actions: true
     undistort_images: true

@@ -29,9 +29,9 @@ model:
   volume_aggregation_method: "softmax"
 
   init_weights: true
-  checkpoint: "/abyss/home/logs-eccv-2022/sypds/sypds_vol_softmax_VolumetricTriangulationNet@25.02.2022-08:53:23/checkpoints/0395/weights.pth"
+  checkpoint: "/abyss/home/logs-eccv-2022/sypds/sypds_vol_softmax_VolumetricTriangulationNet/checkpoints/0395/weights.pth"
 
-  use_gt_pelvis: true
+  use_gt_pelvis: false
 
   cuboid_side: 1000.0
 
@@ -58,7 +58,7 @@ dataset:
   train:
     h36m_root: "/abyss/home/dataset-ltohp-sypds/eccv-2022-split/8_cams/human36m/processed/"
     labels_path: "/abyss/home/dataset-ltohp-sypds/eccv-2022-split/8_cams/human36m/extra/synthetic-pigeons-multiview-labels-GTbboxes.npy"
-    pred_results_path:
+    pred_results_path: "/abyss/home/logs-eccv-2022/sypds/eval_on-train-sypds_alg_AlgebraicTriangulationNet/checkpoints/0000/results.pkl"
 
     with_damaged_actions: true
     undistort_images: true
@@ -74,7 +74,7 @@ dataset:
   val:
     h36m_root: "/abyss/home/dataset-ltohp-sypds/eccv-2022-split/8_cams/human36m/processed/"
     labels_path: "/abyss/home/dataset-ltohp-sypds/eccv-2022-split/8_cams/human36m/extra/synthetic-pigeons-multiview-labels-GTbboxes.npy"
-    pred_results_path:
+    pred_results_path: "/abyss/home/logs-eccv-2022/sypds/eval_on-test-sypds_alg_AlgebraicTriangulationNet/checkpoints/0000/results.pkl"
 
     with_damaged_actions: true
     undistort_images: true

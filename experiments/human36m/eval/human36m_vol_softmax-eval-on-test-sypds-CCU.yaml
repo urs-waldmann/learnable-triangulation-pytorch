@@ -11,8 +11,8 @@ opt:
   use_volumetric_ce_loss: true
   volumetric_ce_loss_weight: 0.01
 
-  n_objects_per_epoch: 1014
-  n_epochs: 1000
+  n_objects_per_epoch: 1010
+  n_epochs: 500
 
   batch_size: 31
   val_batch_size: 31
@@ -29,11 +29,11 @@ model:
   volume_aggregation_method: "softmax"
 
   init_weights: true
-  checkpoint: "/abyss/home/logs-ecccv-2022/sypds/8_cams_3_rows/sypds_vol_softmax_VolumetricTriangulationNet@16.02.2022-14:04:04/checkpoints/0999/weights.pth"
+  checkpoint: "/abyss/home/logs-eccv-2022/sypds/sypds_vol_softmax_VolumetricTriangulationNet/checkpoints/0395/weights.pth"
 
-  use_gt_pelvis: true
+  use_gt_pelvis: false
 
-  cuboid_side: 500.0
+  cuboid_side: 1000.0
 
   volume_size: 64
   volume_multiplier: 1.0
@@ -47,7 +47,7 @@ model:
     style: "simple"
 
     init_weights: true
-    checkpoint: "/abyss/home/dataset-ltohp-sypds/8_cams_3_rows/pretrained/human36m/pose_resnet_4.5_pixels_human36m.pth"
+    checkpoint: "/abyss/home/dataset-ltohp-sypds/eccv-2022-split/8_cams/pretrained/human36m/pose_resnet_4.5_pixels_human36m.pth"
 
     num_joints: 19
     num_layers: 152
@@ -56,9 +56,9 @@ dataset:
   kind: "human36m"
 
   train:
-    h36m_root: "/abyss/home/dataset-ltohp-sypds/8_cams_3_rows/human36m/processed/"
-    labels_path: "/abyss/home/dataset-ltohp-sypds/8_cams_3_rows/human36m/extra/synthetic-pigeons-multiview-labels-GTbboxes.npy"
-    pred_results_path:
+    h36m_root: "/abyss/home/dataset-ltohp-sypds/eccv-2022-split/8_cams/human36m/processed/"
+    labels_path: "/abyss/home/dataset-ltohp-sypds/eccv-2022-split/8_cams/human36m/extra/synthetic-pigeons-multiview-labels-GTbboxes.npy"
+    pred_results_path: "/abyss/home/logs-eccv-2022/sypds/eval_on-train-sypds_alg_AlgebraicTriangulationNet/checkpoints/0000/results.pkl"
 
     with_damaged_actions: true
     undistort_images: true
@@ -72,9 +72,9 @@ dataset:
     num_workers: 8
 
   val:
-    h36m_root: "/abyss/home/dataset-ltohp-sypds/8_cams_3_rows/human36m/processed/"
-    labels_path: "/abyss/home/dataset-ltohp-sypds/8_cams_3_rows/human36m/extra/synthetic-pigeons-multiview-labels-GTbboxes.npy"
-    pred_results_path:
+    h36m_root: "/abyss/home/dataset-ltohp-sypds/eccv-2022-split/8_cams/human36m/processed/"
+    labels_path: "/abyss/home/dataset-ltohp-sypds/eccv-2022-split/8_cams/human36m/extra/synthetic-pigeons-multiview-labels-GTbboxes.npy"
+    pred_results_path: "/abyss/home/logs-eccv-2022/sypds/eval_on-test-sypds_alg_AlgebraicTriangulationNet/checkpoints/0000/results.pkl"
 
     with_damaged_actions: true
     undistort_images: true

@@ -257,7 +257,7 @@ class Human36MMultiViewDataset(Dataset):
 
         # relative mean error per 16/26 joints in mm, for each pose
         if not (transfer_cmu_to_human36m or transfer_human36m_to_human36m):
-            root_index = 6 if self.kind == "mpii" else 6
+            root_index = 6 if self.kind == "mpii" else 7
         else:
             root_index = 0
 

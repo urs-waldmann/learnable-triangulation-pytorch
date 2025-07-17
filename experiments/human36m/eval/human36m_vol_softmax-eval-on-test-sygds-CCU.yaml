@@ -1,6 +1,6 @@
-title: "on-test-sypds_vol_softmax"
+title: "on-test-sygds-gt_vol_softmax"
 kind: "human36m"
-vis_freq: 3
+vis_freq: 5
 vis_n_elements: 10
 
 image_shape: [384, 384]
@@ -11,8 +11,8 @@ opt:
   use_volumetric_ce_loss: true
   volumetric_ce_loss_weight: 0.01
 
-  n_objects_per_epoch: 1014
-  n_epochs: 1000
+  n_objects_per_epoch: 1330
+  n_epochs: 500
 
   batch_size: 31
   val_batch_size: 31
@@ -29,11 +29,11 @@ model:
   volume_aggregation_method: "softmax"
 
   init_weights: true
-  checkpoint: "/abyss/home/logs-ecccv-2022/sypds/8_cams_3_rows/sypds_vol_softmax_VolumetricTriangulationNet@16.02.2022-14:04:04/checkpoints/0999/weights.pth"
+  checkpoint: "/abyss/home/logs-eccv-2022/sygds/sygds_vol_softmax_VolumetricTriangulationNet@01.03.2022-12:29:24/checkpoints/0499/weights.pth"
 
   use_gt_pelvis: true
 
-  cuboid_side: 500.0
+  cuboid_side: 8000.0
 
   volume_size: 64
   volume_multiplier: 1.0
@@ -47,17 +47,17 @@ model:
     style: "simple"
 
     init_weights: true
-    checkpoint: "/abyss/home/dataset-ltohp-sypds/8_cams_3_rows/pretrained/human36m/pose_resnet_4.5_pixels_human36m.pth"
+    checkpoint: "/abyss/home/dataset-ltohp-sygds/8_cams/pretrained/human36m/pose_resnet_4.5_pixels_human36m.pth"
 
-    num_joints: 19
+    num_joints: 26
     num_layers: 152
 
 dataset:
   kind: "human36m"
 
   train:
-    h36m_root: "/abyss/home/dataset-ltohp-sypds/8_cams_3_rows/human36m/processed/"
-    labels_path: "/abyss/home/dataset-ltohp-sypds/8_cams_3_rows/human36m/extra/synthetic-pigeons-multiview-labels-GTbboxes.npy"
+    h36m_root: "/abyss/home/dataset-ltohp-sygds/8_cams/human36m/processed/"
+    labels_path: "/abyss/home/dataset-ltohp-sygds/8_cams/human36m/extra/synthetic-giraffe-multiview-labels-GTbboxes.npy"
     pred_results_path:
 
     with_damaged_actions: true
@@ -72,8 +72,8 @@ dataset:
     num_workers: 8
 
   val:
-    h36m_root: "/abyss/home/dataset-ltohp-sypds/8_cams_3_rows/human36m/processed/"
-    labels_path: "/abyss/home/dataset-ltohp-sypds/8_cams_3_rows/human36m/extra/synthetic-pigeons-multiview-labels-GTbboxes.npy"
+    h36m_root: "/abyss/home/dataset-ltohp-sygds/8_cams/human36m/processed/"
+    labels_path: "/abyss/home/dataset-ltohp-sygds/8_cams/human36m/extra/synthetic-giraffe-multiview-labels-GTbboxes.npy"
     pred_results_path:
 
     with_damaged_actions: true
